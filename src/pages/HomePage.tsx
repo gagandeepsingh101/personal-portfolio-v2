@@ -1,9 +1,10 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import BottomNav from '../components/BottonNav'; 
 import MainScreen from '../components/MainScreen';
 
 const HomePage: React.FC = () => {
+  const [openStart,setOpenStart] = useState<boolean>(false);
   return (
     // Motion div for page transition
     <motion.div
@@ -14,9 +15,9 @@ const HomePage: React.FC = () => {
       className="h-full w-full bg-cover bg-center bg-bgImg"
     >
       {/* Main screen component */}
-      <MainScreen/>
+      <MainScreen openStart={openStart}  />
       {/* Bottom navigation component */}
-      <BottomNav />
+      <BottomNav setOpenStart={setOpenStart} openStart={openStart} />
     </motion.div>
   );
 };

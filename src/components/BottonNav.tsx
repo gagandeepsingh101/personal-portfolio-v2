@@ -1,11 +1,11 @@
-import React, { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
+import React, { SetStateAction, useEffect, useState } from 'react';
 import { FaCloud } from 'react-icons/fa';
-import aboutIcon from '../assets/about.png';
-import contactIcon from '../assets/contact.png';
+import mailLogo from '../assets/mail.png';
 import projectIcon from '../assets/project.png';
 import windowLogo from '../assets/windowLogo.png';
 import { useGetLatestTime } from '../hooks/useGetLatestTime';
+import HoverableImage from './HoverableImage';
 
 // Animation properties for motion elements
 const mainAnimation = {
@@ -14,21 +14,18 @@ const mainAnimation = {
     whileTap: { padding: '5px', borderRadius: '10px', backgroundColor: '#ffffff50' },
 };
 
-// Component for hoverable images
-const HoverableImage: React.FC<{ src: string; alt: string }> = ({ src, alt }) => (
-    <motion.img src={src} className='w-10 h-10' alt={alt} whileHover={mainAnimation.whileHover} transition={mainAnimation.transition} />
-);
-
-const BottomNav: React.FC = () => {
+const BottomNav: React.FC<{ setOpenStart: React.Dispatch<SetStateAction<boolean>>, openStart: boolean }> = ({ setOpenStart, openStart }) => {
     const [latestTime, setLatestTime] = useState<null | { currentTime: string; date: string }>();
     const currentTime = useGetLatestTime;
-
     useEffect(() => {
         const intervalId = setInterval(() => {
             setLatestTime(currentTime());
         }, 1000);
 
-        return () => clearInterval(intervalId);
+        return () => {
+            clearInterval(intervalId);
+
+        };
     }, [currentTime]);
 
     return (
@@ -44,10 +41,9 @@ const BottomNav: React.FC = () => {
 
             {/* Navigation icons */}
             <div className='w-10/12 h-full flex gap-6 pt-2 justify-center'>
-                <HoverableImage src={windowLogo} alt='Window Logo' />
-                <HoverableImage src={contactIcon} alt='Contact Icon' />
-                <HoverableImage src={aboutIcon} alt='About Icon' />
-                <HoverableImage src={projectIcon} alt='Project Icon' />
+                <HoverableImage onClickFn={() => setOpenStart(!openStart)} src={windowLogo} alt='Window Icon' toolTipText='Start' typeIcon='bottomNav' />
+                <HoverableImage src={projectIcon} alt='Project Icon' toolTipText='Projects' typeIcon='bottomNav' />
+                <HoverableImage src={mailLogo} alt='Mail Icon' toolTipText='Mail' typeIcon='bottomNav' />
             </div>
 
             {/* Language and time information */}

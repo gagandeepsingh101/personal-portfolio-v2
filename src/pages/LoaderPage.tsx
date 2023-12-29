@@ -1,6 +1,6 @@
 import { AnimatePresence, motion } from 'framer-motion';
 import React from 'react';
-import { SiWindows11 } from 'react-icons/si';
+import { GrWindows } from "react-icons/gr";
 import { ThreeDots } from 'react-loader-spinner';
 
 const LoaderPage: React.FC = () => {
@@ -23,7 +23,7 @@ const LoaderPage: React.FC = () => {
           transition={{ duration: 2, delay: 1 }}
           className="h-fit w-fit"
         >
-          <SiWindows11 className="w-32 h-32 m-auto text-sky-500" />
+          <GrWindows className="w-32 h-32 m-auto text-sky-500" />
         </motion.div>
 
         {/* Three dots loading spinner */}
