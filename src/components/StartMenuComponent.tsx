@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { IoIosArrowUp } from "react-icons/io";
 import githubLogo from '../assets/github.png';
-import linkedinLogo from '../assets/linkedin.png';
+import linkedinLogo from '../assets/linkedIn.png';
 import projectIcon from '../assets/project.png';
 import resumeLogo from '../assets/resume.png';
 import HoverableImage from './HoverableImage';
