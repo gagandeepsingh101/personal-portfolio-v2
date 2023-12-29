@@ -5,7 +5,7 @@ import zoomInLogo from '../assets/zoomIn.png';
 import zoomOutLogo from '../assets/zoomOut.png';
 import resumeLogo from '../assets/resume.png';
 import githubLogo from '../assets/github.png';
-import linkedinLogo from '../assets/linkedIn.png';
+import linkedInLogo from '../assets/linkedIn.png'
 import StartMenuComponent from './StartMenuComponent';
 
 const mainAnimation = {
@@ -43,7 +43,7 @@ const MainScreen: React.FC<{ openStart: boolean }> = ({ openStart }) => {
       <motion.div className='w-full h-[93%] m-2 relative' ref={constraintsRef}>
       <DraggableDiv iconName='Projects' iconImage={projectIcon} constraintsRef={constraintsRef}></DraggableDiv>
       <DraggableDiv iconName='GitHub' iconImage={githubLogo} constraintsRef={constraintsRef}></DraggableDiv>
-      <DraggableDiv iconName='LinkedIn' iconImage={linkedinLogo} constraintsRef={constraintsRef}></DraggableDiv>
+      <DraggableDiv iconName='LinkedIn' iconImage={linkedInLogo} constraintsRef={constraintsRef}></DraggableDiv>
       <DraggableDiv iconName='Resume' iconImage={resumeLogo} constraintsRef={constraintsRef}></DraggableDiv>
       {<StartMenuComponent openStart={openStart}  />}
       {!zoomIn ?
