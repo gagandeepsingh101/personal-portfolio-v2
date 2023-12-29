@@ -5,7 +5,7 @@ import zoomInLogo from '../assets/zoomIn.png';
 import zoomOutLogo from '../assets/zoomOut.png';
 import resumeLogo from '../assets/resume.png';
 import githubLogo from '../assets/github.png';
-import linkedinLogo from '../assets/linkedin.png';
+import linkedinLogo from '../assets/linkedIn.png';
 import StartMenuComponent from './StartMenuComponent';
 
 const mainAnimation = {
