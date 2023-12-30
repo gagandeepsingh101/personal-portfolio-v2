@@ -14,7 +14,7 @@ const HoverableImage: React.FC<{ src: string; alt: string, toolTipText: string, 
     <>
         {<Tooltip id={toolTipText} style={{ backgroundColor: '#00000080', backdropFilter: 'blur(10px)' }} />}
         <motion.img onClick={onClickFn} data-tooltip-id={toolTipText} data-tooltip-content={toolTipText}
-            src={src} className={typeIcon === 'bottomNav' ? 'w-10 h-10' : 'w-[55px] h-[55px]'} alt={alt} whileHover={mainAnimation.whileHover} transition={mainAnimation.transition} />
+            src={src} className={typeIcon === 'bottomNav' ? 'w-8 h-8 lg:w-10 lg:h-10' : 'w-[45px] h-[45px] md:w-[55px] md:h-[55px]'} alt={alt} whileHover={mainAnimation.whileHover} transition={mainAnimation.transition} />
     </>
 );
 

@@ -1,9 +1,19 @@
 import React, { useEffect, useState } from "react";
 import HomePage from "./pages/HomePage";
 import LoaderPage from "./pages/LoaderPage";
+import { Toaster } from "react-hot-toast";
+
+// Use an interface for the context value to provide better type checking
+interface AppContextProps {
+  showProjectSection: boolean;
+  setShowProjectSection: React.Dispatch<React.SetStateAction<boolean>>;
+}
+
+export const AppContext = React.createContext({} as AppContextProps);
 
 const App: React.FC = () => {
   const [removeLoading, setRemoveLoading] = useState<boolean>(false);
+  const [showProjectSection, setShowProjectSection] = useState<boolean>(false);
 
   useEffect(() => {
     // Delay for 5000 milliseconds (5 seconds) before removing the loading state
@@ -16,10 +26,15 @@ const App: React.FC = () => {
   }, []); // Empty dependency array to run the effect only once
 
   return (
-    <div className="h-screen w-screen overflow-hidden relative flex justify-center items-center bg-black">
-      {removeLoading && <HomePage />}
-      {!removeLoading && <LoaderPage />}
-    </div>
+    <AppContext.Provider value={{ 
+      showProjectSection,
+      setShowProjectSection,
+    }}>
+      <div className="h-screen w-screen overflow-hidden relative flex justify-center items-center bg-black">
+      <Toaster />
+        {removeLoading ? <HomePage /> : <LoaderPage />}
+      </div>
+    </AppContext.Provider>
   );
 }
 

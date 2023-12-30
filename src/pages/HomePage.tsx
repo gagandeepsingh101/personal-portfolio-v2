@@ -15,7 +15,7 @@ const HomePage: React.FC = () => {
       className="h-full w-full bg-cover bg-center bg-bgImg"
     >
       {/* Main screen component */}
-      <MainScreen openStart={openStart}  />
+      <MainScreen openStart={openStart} setOpenStart={setOpenStart}  />
       {/* Bottom navigation component */}
       <BottomNav setOpenStart={setOpenStart} openStart={openStart} />
     </motion.div>
