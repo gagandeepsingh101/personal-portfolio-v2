@@ -90,12 +90,13 @@ const MainScreen: React.FC<{ openStart: boolean, setOpenStart: React.Dispatch<Re
           constraintsRef={constraintsRef}
         />
         <DraggableDiv
-          onClickFun={() => window.open("https://www.linkedin.com/in/gagandeep-singh-a2a639247", "_blank")}
+          onClickFun={() => window.open("https://www.linkedin.com/in/gagandeepsingh101", "_blank")}
           iconName='LinkedIn'
           iconImage={linkedInLogo}
           constraintsRef={constraintsRef}
         />
         <DraggableDiv
+        onClickFun={()=>window.open("https://drive.google.com/file/d/1UwICjElQd1zrQ6fC8wb24n8AfChBCOGo/view?usp=sharing","_blank")}
           iconName='Resume'
           iconImage={resumeLogo}
           constraintsRef={constraintsRef}

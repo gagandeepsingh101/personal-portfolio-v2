@@ -19,9 +19,9 @@ const StartMenuComponent: React.FC<{ openStart: boolean, setOpenStart: React.Dis
         + (showMoreInfo ? ' h-1/2 lg:h-[45%] ' : 'h-1/5 ') + (openStart ? 'opacity-100 translate-y-0' : 'opacity-0  translate-y-[150%] ')}>
       <div className={'w-full p-2 flex flex-col overflow-hidden ' + (showMoreInfo ? 'h-4/5' : 'h-1/2')}>
         <div className={'w-full ' + showMoreInfo ? ' flex justify-between md:px-10  h-1/4' : ' flex justify-between  h-full'}>
-          <HoverableImage onClickFn={() => { window.open("https://www.linkedin.com/in/gagandeep-singh-a2a639247", "_blank") }} src={linkedinLogo} alt='LinkedIn Icon' toolTipText='LinkedIn' typeIcon="startMenuIcon" />
+          <HoverableImage onClickFn={() => { window.open("https://www.linkedin.com/in/gagandeepsingh101", "_blank") }} src={linkedinLogo} alt='LinkedIn Icon' toolTipText='LinkedIn' typeIcon="startMenuIcon" />
           <HoverableImage onClickFn={() => { window.open("https://github.com/gagandeepsingh101", "_blank") }} src={githubLogo} alt='GitHub Icon' toolTipText='GitHub' typeIcon="startMenuIcon" />
-          <HoverableImage src={resumeLogo} alt='Resume Icon' toolTipText='Resume' typeIcon="startMenuIcon" />
+          <HoverableImage onClickFn={()=>window.open("https://drive.google.com/file/d/1UwICjElQd1zrQ6fC8wb24n8AfChBCOGo/view?usp=sharing","_blank")} src={resumeLogo} alt='Resume Icon' toolTipText='Resume' typeIcon="startMenuIcon" />
           <HoverableImage onClickFn={() => {
             setShowProjectSection(!showProjectSection);
             setOpenStart(!openStart);
